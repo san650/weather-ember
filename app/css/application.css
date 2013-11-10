@@ -1,3 +1,31 @@
-.content {
-  margin-top:70px;
+body{
+  background: white url(../img/bg.jpg) repeat-x 0% 0% scroll;
+}
+
+ul.nav {
+  background: rgba(255,255,255,0.5);
+}
+
+div.content {
+  margin-top:50px;
+}
+p.content {
+  margin-top:20px;
+}
+.bookmarks li {
+  margin-right: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 84px;
+  width: 84px;
+  padding: 3px;
+  color: white;
+  background: rgba(255,255,255,0.15);
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+  text-align: center;
+  float:left;
+}
+.bookmarks .temp{
+  font-size: 42px;
+  line-height: 42px;
 }
