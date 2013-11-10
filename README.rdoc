@@ -1,0 +1,4 @@
+== Getting Started
+
+Start the web server:
+  <tt>ruby server.rb</tt>
