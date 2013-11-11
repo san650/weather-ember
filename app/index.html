@@ -45,26 +45,11 @@
             </div>
           </div>
 
-          <!-- Weather details -->
           <div class="row">
             <div class="span9">
-              <p class="content">
-                Current weather conditions for <strong>Aigua</strong>
-              </p>
-              <dl>
-                <dt>Temperature</dt>
-                <dd>20&deg;C</dd>
-                <dt>Condition</dt>
-                <dd>La máxima de hoy ha sido de 21&deg;C a las 14:00 en un día Mayormente nublado</dd>
-              </dl>
-
-              <button class="btn btn-primary">
-                Add bookmark
-              </button>
+              {{ outlet }}
             </div>
           </div>
-          <!-- end Weather details -->
-
         </div>
       </div>
 
@@ -77,10 +62,26 @@
       <ul class="nav nav-tabs nav-stacked">
         {{#each}}
         <li>
-          <a href="#">{{name}}</a>
+        {{#link-to "cities.details" id}}{{name}}{{/link-to}}
         </li>
         {{/each}}
       </ul>
+    </script>
+
+    <script type="text/x-handlebars" data-template-name="cities/details">
+      <p class="content">
+        Current weather conditions for <strong>Aigua</strong>
+      </p>
+      <dl>
+        <dt>Temperature</dt>
+        <dd>20&deg;C</dd>
+        <dt>Condition</dt>
+        <dd>La máxima de hoy ha sido de 21&deg;C a las 14:00 en un día Mayormente nublado</dd>
+      </dl>
+
+      <button class="btn btn-primary">
+        Add bookmark
+      </button>
     </script>
 
     <!-- includes -->
