@@ -118,7 +118,7 @@ Weather.City = DS.Model.extend({
   Weather.City.FIXTURES = [];
 
   $.each(CITIES_IN_URUGUAY, function(i, v) {
-    Weather.City.FIXTURES.push({ id: 'city_' + i.toString(), name: v[0], woeid: v[1] });
+    Weather.City.FIXTURES.push({ id: v[1], name: v[0] });
   });
 
 })(jQuery);
