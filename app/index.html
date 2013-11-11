@@ -7,7 +7,7 @@
     <link href="css/application.css" rel="stylesheet" media="screen">
   </head>
   <body>
-    <script type="text/x-handlebars" data-template-name="weather">
+    <script type="text/x-handlebars" data-template-name="cities">
       <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="navbar-inner">
           <div class="container">
@@ -25,15 +25,13 @@
               </div>
             </div>
           </div>
-
           <!-- List of cities -->
           <ul class="nav nav-tabs nav-stacked">
-            <li><a href="achar">Achar</a></li>
-            <li><a href="aguas+corrientes">Aguas Corrientes</a></li>
-            <li><a href="aigua" class="active">Aigua</a></li>
-            <li><a href="algorta">Algorta</a></li>
-            <li><a href="artigas">Artigas</a></li>
-            <li><a href="...">...</a></li>
+            {{#each}}
+            <li>
+              <a href="#">{{name}}</a>
+            </li>
+            {{/each}}
           </ul>
         </div>
 
@@ -90,5 +88,6 @@
 
     <script src="js/application.js"></script>
     <script src="js/router.js"></script>
+    <script src="js/models/city.js"></script>
   </body>
 </html>
