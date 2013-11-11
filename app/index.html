@@ -62,23 +62,15 @@
       <ul class="nav nav-tabs nav-stacked">
         {{#each}}
         <li>
-        {{#link-to "cities.details" id}}{{name}}{{/link-to}}
+        {{#link-to "cities.weather" id}}{{name}}{{/link-to}}
         </li>
         {{/each}}
       </ul>
     </script>
 
-    <script type="text/x-handlebars" data-template-name="cities/details">
-      <p>{{query.results.channel.item.title}}</p>
-      <p class="content">
-        Current weather conditions for <strong>Aigua</strong>
-      </p>
-      <dl>
-        <dt>Temperature</dt>
-        <dd>20&deg;C</dd>
-        <dt>Condition</dt>
-        <dd>La máxima de hoy ha sido de 21&deg;C a las 14:00 en un día Mayormente nublado</dd>
-      </dl>
+    <script type="text/x-handlebars" data-template-name="cities/weather">
+      <h2>{{title}}</h2>
+      {{{description}}}
 
       <button class="btn btn-primary">
         Add bookmark
@@ -94,5 +86,6 @@
     <script src="js/application.js"></script>
     <script src="js/router.js"></script>
     <script src="js/models/city.js"></script>
+    <script src="js/models/weather.js"></script>
   </body>
 </html>
