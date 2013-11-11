@@ -25,14 +25,7 @@
               </div>
             </div>
           </div>
-          <!-- List of cities -->
-          <ul class="nav nav-tabs nav-stacked">
-            {{#each}}
-            <li>
-              <a href="#">{{name}}</a>
-            </li>
-            {{/each}}
-          </ul>
+          {{ partial "cities" }}
         </div>
 
         <div class="span9">
@@ -78,6 +71,16 @@
       <footer>
         <p><em>Jueves Técnico 11/2013</em></p>
       </footer>
+    </script>
+
+    <script type="text/x-handlebars" data-template-name="_cities">
+      <ul class="nav nav-tabs nav-stacked">
+        {{#each}}
+        <li>
+          <a href="#">{{name}}</a>
+        </li>
+        {{/each}}
+      </ul>
     </script>
 
     <!-- includes -->
