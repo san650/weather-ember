@@ -1,11 +1,11 @@
 Weather.Router.map(function () {
   this.resource("cities", { path: "/" }, function(){
-    this.route("weather", { path: "/:city_id" });
+    this.route("weather", { path: "/weather/:city_id" });
   });
 });
 
 Weather.CitiesRoute = Ember.Route.extend({
-  model: function() {
+  model: function(params) {
     return this.store.find('city');
   }
 });

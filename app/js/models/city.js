@@ -1,6 +1,7 @@
 Weather.City = DS.Model.extend({
   name: DS.attr("string"),
-  woeid: DS.attr("number")
+  woeid: DS.attr("number"),
+  visible: DS.attr("boolean")
 });
 
 (function($){
@@ -118,7 +119,7 @@ Weather.City = DS.Model.extend({
   Weather.City.FIXTURES = [];
 
   $.each(CITIES_IN_URUGUAY, function(i, v) {
-    Weather.City.FIXTURES.push({ id: v[1], name: v[0] });
+    Weather.City.FIXTURES.push({ id: v[1], name: v[0], visible: true });
   });
 
 })(jQuery);

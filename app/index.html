@@ -17,35 +17,13 @@
       </div>
       <div class="row-fluid content">
         <div class="span3">
-          <!-- search -->
-          <div class="navbar">
-            <div class="navbar-inner">
-              <div class="navbar-search pull-left">
-                <input type="text" class="search-query" placeholder="Search">
-              </div>
-            </div>
-          </div>
+          {{ partial "search" }}
           {{ partial "cities" }}
         </div>
 
         <div class="span9">
-          <!-- bookmarks -->
+          {{ partial "bookmarks" }}
           <div class="row-fluid">
-            <div class="span9">
-              <ul class="bookmarks clearfix">
-                <li>
-                  <strong>Montevideo</strong></br>
-                  <span class="temp">21&deg;</span>
-                </li>
-                <li>
-                  <strong>Artigas</strong></br>
-                  <span class="temp">34&deg;</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="row">
             <div class="span9">
               {{ outlet }}
             </div>
@@ -60,12 +38,39 @@
 
     <script type="text/x-handlebars" data-template-name="_cities">
       <ul class="nav nav-tabs nav-stacked">
-        {{#each}}
-        <li>
-        {{#link-to "cities.weather" id}}{{name}}{{/link-to}}
+        {{#each itemController="city"}}
+        <li {{bind-attr class="hidden:hide"}}>
+          {{#link-to "cities.weather" id}}{{name}}{{/link-to}}
         </li>
         {{/each}}
       </ul>
+    </script>
+
+    <script type="text/x-handlebars" data-template-name="_search">
+      <div class="navbar">
+        <div class="navbar-inner">
+          <div class="navbar-search pull-left">
+            {{input type="text" class="search-query" placeholder="Search..." value=searchTerm action="search"}}
+          </div>
+        </div>
+      </div>
+    </script>
+
+    <script type="text/x-handlebars" data-template-name="_bookmarks">
+      <div class="row-fluid">
+        <div class="span9">
+          <ul class="bookmarks clearfix">
+            <li>
+              <strong>Montevideo</strong></br>
+              <span class="temp">21&deg;</span>
+            </li>
+            <li>
+              <strong>Artigas</strong></br>
+              <span class="temp">34&deg;</span>
+            </li>
+          </ul>
+        </div>
+      </div>
     </script>
 
     <script type="text/x-handlebars" data-template-name="cities/weather">
@@ -87,5 +92,6 @@
     <script src="js/router.js"></script>
     <script src="js/models/city.js"></script>
     <script src="js/models/weather.js"></script>
+    <script src="js/controllers/cities_controller.js"></script>
   </body>
 </html>
