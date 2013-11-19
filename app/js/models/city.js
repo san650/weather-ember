@@ -12,16 +12,13 @@ var citiesInUruguay = [
   ['Artigas', 380894],
   ['Atlantida', 468057],
   ['Balneario Solis', 468011],
-  ['Baltasar Brum', 468083],
   ['Belen', 468012],
   ['Bernabe Rivera', 468013],
   ['Blanquillo', 468014],
   ['Canelones', 468058],
   ['Cardal', 468015],
   ['Cardona', 468016],
-  ['Carmelo', 468059],
   ['Carmen', 420098],
-  ['Cebollati', 468085],
   ['Cerrillos', 469012],
   ['Cerro Chato', 468086],
   ['Cerro Colorado', 468087],
@@ -30,12 +27,10 @@ var citiesInUruguay = [
   ['Chuy', 468118],
   ['Colon', 380898],
   ['Colonia del Sacramento', 468796],
-  ['Colonia Lavalleja', 468018],
   ['Colonia Nuevo Paysandu', 380445],
   ['Cuaro', 468019],
   ['Dolores', 468060],
   ['Durazno', 468061],
-  ['Ecilda Paullier', 468020],
   ['Empalme Olmos', 468021],
   ['Florencio Sanchez', 380899],
   ['Florida', 468062],
@@ -118,9 +113,9 @@ var citiesInUruguay = [
 Weather.City.FIXTURES = [];
 
 $.each(citiesInUruguay, function(index, value) {
-	Weather.City.FIXTURES.push({
-		id: index,
-		name: value[0],
-		woeid: value[1]
-	});
+  Weather.City.FIXTURES.push({
+    id: index,
+    name: value[0],
+    woeid: value[1]
+  });
 });
