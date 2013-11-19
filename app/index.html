@@ -7,84 +7,95 @@
     <link href="css/application.css" rel="stylesheet" media="screen">
   </head>
   <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <a class="brand" href="#">Ember Weather</a>
+    <script type="text/x-handlebars" data-template-name="cities">
+      <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+          <div class="container">
+            <a class="brand" href="#">Ember Weather</a>
+          </div>
         </div>
       </div>
-    </div>
+      <div class="row-fluid content">
+        <div class="span3">
+          {{ partial "search" }}
+          {{ partial "cities" }}
+        </div>
 
-    <div class="row-fluid content">
-      <div class="span3">
-        <!-- search -->
-        <div class="navbar">
-          <div class="navbar-inner">
-            <div class="navbar-search pull-left">
-              <input type="text" class="search-query" placeholder="Search">
+        <div class="span9">
+          {{ partial "bookmarks" }}
+          <div class="row-fluid">
+            <div class="span9">
+              {{ outlet }}
             </div>
           </div>
         </div>
-
-        <!-- List of cities -->
-        <ul class="nav nav-tabs nav-stacked">
-          <li><a href="achar">Achar</a></li>
-          <li><a href="aguas+corrientes">Aguas Corrientes</a></li>
-          <li><a href="aigua" class="active">Aigua</a></li>
-          <li><a href="algorta">Algorta</a></li>
-          <li><a href="artigas">Artigas</a></li>
-          <li><a href="...">...</a></li>
-        </ul>
       </div>
 
-      <div class="span9">
-        <!-- bookmarks -->
-        <div class="row-fluid">
-          <div class="span9">
-            <ul class="bookmarks clearfix">
-              <li>
-                <strong>Montevideo</strong></br>
-                <span class="temp">21&deg;</span>
-              </li>
-              <li>
-                <strong>Artigas</strong></br>
-                <span class="temp">34&deg;</span>
-              </li>
-            </ul>
+      <footer>
+        <p><em>Jueves Técnico 11/2013</em></p>
+      </footer>
+    </script>
+
+    <script type="text/x-handlebars" data-template-name="_cities">
+      <ul class="nav nav-tabs nav-stacked">
+        {{#each itemController="city"}}
+        <li {{bind-attr class="hidden:hide"}}>
+          {{#link-to "cities.weather" id}}{{name}}{{/link-to}}
+        </li>
+        {{/each}}
+      </ul>
+    </script>
+
+    <script type="text/x-handlebars" data-template-name="_search">
+      <div class="navbar">
+        <div class="navbar-inner">
+          <div class="navbar-search pull-left">
+            {{input type="text" class="search-query" placeholder="Search..." value=searchTerm action="search"}}
           </div>
         </div>
-
-        <!-- Weather details -->
-        <div class="row">
-          <div class="span9">
-            <p class="content">
-              Current weather conditions for <strong>Aigua</strong>
-            </p>
-            <dl>
-              <dt>Temperature</dt>
-              <dd>20&deg;C</dd>
-              <dt>Condition</dt>
-              <dd>La máxima de hoy ha sido de 21&deg;C a las 14:00 en un día Mayormente nublado</dd>
-            </dl>
-
-            <button class="btn btn-primary">
-              Add bookmark
-            </button>
-          </div>
-        </div>
-        <!-- end Weather details -->
-
       </div>
-    </div>
+    </script>
 
-    <footer>
-      <p><em>Jueves Técnico 11/2013</em></p>
-    </footer>
+    <script type="text/x-handlebars" data-template-name="_bookmarks">
+      <div class="row-fluid">
+        <div class="span9">
+          <ul class="bookmarks clearfix">
+            <li>
+              <strong>Montevideo</strong></br>
+              <span class="temp">21&deg;</span>
+            </li>
+            <li>
+              <strong>Artigas</strong></br>
+              <span class="temp">34&deg;</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </script>
+
+    <script type="text/x-handlebars" data-template-name="cities/weather">
+      <h2>{{title}}</h2>
+      {{{description}}}
+
+      <button class="btn btn-primary">
+        Add bookmark
+      </button>
+    </script>
+
+    <script type="text/x-handlebars" data-template-name="cities/index">
+      <h2>Select a city to see weather information!</h2>
+    </script>
 
     <!-- includes -->
     <script src="js/libs/jquery-1.10.2.min.js"></script>
     <script src="js/libs/handlebars-1.0.0.js"></script>
     <script src="js/libs/ember.js"></script>
     <script src="js/libs/ember-data.js"></script>
+
+    <script src="js/application.js"></script>
+    <script src="js/router.js"></script>
+    <script src="js/models/city.js"></script>
+    <script src="js/models/weather.js"></script>
+    <script src="js/controllers/cities_controller.js"></script>
   </body>
 </html>
