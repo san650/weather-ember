@@ -1,6 +1,7 @@
 Weather.City = DS.Model.extend({
   name: DS.attr('string'),
-  woeid: DS.attr('number')
+  woeid: DS.attr('number'),
+  weatherCondition: DS.belongsTo('weather_condition')
 });
 
 var citiesInUruguay = [
