@@ -28,14 +28,7 @@
         </div>
 
         <!-- List of cities -->
-        <ul class="nav nav-tabs nav-stacked">
-          <li><a href="achar">Achar</a></li>
-          <li><a href="aguas+corrientes">Aguas Corrientes</a></li>
-          <li><a href="aigua" class="active">Aigua</a></li>
-          <li><a href="algorta">Algorta</a></li>
-          <li><a href="artigas">Artigas</a></li>
-          <li><a href="...">...</a></li>
-        </ul>
+        {{ partial "cities" }}
       </div>
 
       <div class="span9">
@@ -83,6 +76,14 @@
     </footer>
     </script>
 
+    <script type="text/x-handlebars" data-template-name="_cities">
+    <ul class="nav nav-tabs nav-stacked">
+      {{#each}}
+      <li><a href="#">{{name}}</a></li>
+      {{/each}}
+    </ul>
+    </script>
+
     <!-- includes -->
     <script src="js/libs/jquery-1.10.2.min.js"></script>
     <script src="js/libs/handlebars-1.0.0.js"></script>
@@ -90,5 +91,6 @@
     <script src="js/libs/ember-data.js"></script>
 
     <script src="js/application.js"></script>
+    <script src="js/models.js"></script>
   </body>
 </html>
