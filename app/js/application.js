@@ -10,5 +10,11 @@ window.Weather = Ember.Application.create({
 // ## ROUTES
 
 Weather.Router.map(function() {
-  this.route("cities", { path: "/" });
+  this.route("cities");
+});
+
+Weather.IndexRoute = Ember.Route.extend({
+  beforeModel: function() {
+    this.transitionTo("cities");
+  }
 });
