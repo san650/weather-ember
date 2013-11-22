@@ -10,5 +10,5 @@ window.Weather = Ember.Application.create({
 // ## ROUTES
 
 Weather.Router.map(function() {
-  this.route("cities");
+  this.route("cities", { path: "/" });
 });
