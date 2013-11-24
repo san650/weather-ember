@@ -11,7 +11,8 @@ Weather.ApplicationAdapter = DS.FixtureAdapter.extend();
 // ## ROUTES
 
 Weather.Router.map(function() {
-  this.route("cities");
+  this.resource("cities", function(){
+  });
 });
 
 Weather.IndexRoute = Ember.Route.extend({

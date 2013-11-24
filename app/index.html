@@ -51,19 +51,7 @@
         <!-- Weather details -->
         <div class="row">
           <div class="span9">
-            <p class="content">
-              Current weather conditions for <strong>Aigua</strong>
-            </p>
-            <dl>
-              <dt>Temperature</dt>
-              <dd>20&deg;C</dd>
-              <dt>Condition</dt>
-              <dd>La máxima de hoy ha sido de 21&deg;C a las 14:00 en un día Mayormente nublado</dd>
-            </dl>
-
-            <button class="btn btn-primary">
-              Add bookmark
-            </button>
+            {{ outlet }}
           </div>
         </div>
         <!-- end Weather details -->
@@ -83,6 +71,28 @@
       {{/each}}
     </ul>
     <p>{{total}}</p>
+    </script>
+
+    <script type="text/x-handlebars" data-template-name="cities/index">
+    <p class="content">
+      Please, select a city to see the weather forecast
+    </p>
+    </script>
+
+    <script type="text/x-handlebars" data-template-name="lorem-ipsum">
+    <p class="content">
+    Current weather conditions for <strong>Aigua</strong>
+    </p>
+    <dl>
+      <dt>Temperature</dt>
+      <dd>20&deg;C</dd>
+      <dt>Condition</dt>
+      <dd>La máxima de hoy ha sido de 21&deg;C a las 14:00 en un día Mayormente nublado</dd>
+    </dl>
+
+    <button class="btn btn-primary">
+      Add bookmark
+    </button>
     </script>
 
     <!-- includes -->
