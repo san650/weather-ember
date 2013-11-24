@@ -67,7 +67,9 @@
     <script type="text/x-handlebars" data-template-name="_cities">
     <ul class="nav nav-tabs nav-stacked">
       {{#each}}
-      <li><a href="#">{{name}}</a></li>
+      <li>
+        {{#link-to "cities.city" this}}{{name}}{{/link-to}}
+      </li>
       {{/each}}
     </ul>
     <p>{{total}}</p>
@@ -79,9 +81,9 @@
     </p>
     </script>
 
-    <script type="text/x-handlebars" data-template-name="lorem-ipsum">
+    <script type="text/x-handlebars" data-template-name="cities/city">
     <p class="content">
-    Current weather conditions for <strong>Aigua</strong>
+    Current weather conditions for <strong>{{name}}</strong>
     </p>
     <dl>
       <dt>Temperature</dt>

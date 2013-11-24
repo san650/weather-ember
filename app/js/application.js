@@ -12,6 +12,7 @@ Weather.ApplicationAdapter = DS.FixtureAdapter.extend();
 
 Weather.Router.map(function() {
   this.resource("cities", function(){
+    this.route("city", { path: ":city_id" });
   });
 });
 
