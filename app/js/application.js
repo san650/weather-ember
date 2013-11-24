@@ -6,7 +6,9 @@ window.Weather = Ember.Application.create({
   },
   LOG_TRANSITIONS: true
 });
-Weather.ApplicationAdapter = DS.FixtureAdapter.extend();
+Weather.ApplicationAdapter = DS.RESTAdapter.extend({
+  namespace: 'api'
+});
 
 // ## ROUTES
 

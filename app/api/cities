@@ -1,0 +1,7 @@
+{ "cities": [
+    { "id": "468063", "detail": 1, "name": "Fray Bentos" },
+    { "id": "468026", "detail": 2, "name": "La Floresta" },
+    { "id": "468052", "detail": 3, "name": "Montevideo"  },
+    { "id": "380901", "detail": 4, "name": "La Paloma"   },
+    { "id": "468081", "detail": 5, "name": "Achar"       }
+  ] }
