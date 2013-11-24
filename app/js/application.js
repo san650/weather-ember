@@ -31,6 +31,7 @@ Weather.CitiesRoute = Ember.Route.extend({
 // ## Controllers
 
 Weather.CitiesController = Ember.ArrayController.extend({
+  itemController: 'city',
   sortProperties: ['name'],
   sortAscending: true,
 
@@ -43,5 +44,19 @@ Weather.CitiesController = Ember.ArrayController.extend({
       default:
         return "There are " + this.get("length") + " cities";
     }
-  }.property("length")
+  }.property("length"),
+
+  actions: {
+    filter: function() {
+      var term = new RegExp($.trim(this.get("filterTerm")), "i");
+
+      this.forEach(function(m) {
+        m.set('hide', !term.test(m.get('name')));
+      });
+    }
+  }
+});
+
+Weather.CityController = Ember.ObjectController.extend({
+  hidden: false
 });

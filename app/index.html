@@ -19,13 +19,7 @@
     <div class="row-fluid content">
       <div class="span3">
         <!-- search -->
-        <div class="navbar">
-          <div class="navbar-inner">
-            <div class="navbar-search pull-left">
-              <input type="text" class="search-query" placeholder="Search">
-            </div>
-          </div>
-        </div>
+        {{ partial "search" }}
 
         <!-- List of cities -->
         {{ partial "cities" }}
@@ -64,10 +58,20 @@
     </footer>
     </script>
 
+    <script type="text/x-handlebars" data-template-name="_search">
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="navbar-search pull-left">
+          {{input type="text" class="search-query" placeholder="Search" value=filterTerm insert-newline="filter"}}
+        </div>
+      </div>
+    </div>
+    </script>
+
     <script type="text/x-handlebars" data-template-name="_cities">
     <ul class="nav nav-tabs nav-stacked">
       {{#each}}
-      <li>
+      <li {{bind-attr class="hidden:hide"}}>
         {{#link-to "cities.city" this}}{{name}}{{/link-to}}
       </li>
       {{/each}}
